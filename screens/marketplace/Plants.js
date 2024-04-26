@@ -78,11 +78,16 @@ const PlantCard = ({ image, name, price }) => {
 const Plants = ({ navigation }) => {
   const renderPlantItem = ({ item }) => (
     <Pressable
-      // onPress={() =>
-      //   navigation.navigate("ProductScreen", {
-      //     name: item.name,
-      //   })
-      // }
+    onPress={() => {
+      const data = {
+        id: item.id,
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        image: item.image.toString(), // Convert image URI to string
+      };
+      navigation.navigate("BuyProduct1", { data });
+    }}
     >
       <PlantCard
         image={item.image}

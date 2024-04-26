@@ -98,7 +98,10 @@ const HomePage = () => {
               horizontal
               showsHorizontalScrollIndicator={false}
             >
-              <View style={styles.imageContainer1}>
+               <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Harvesting")}
+              >
                 <Image
                   source={{
                     uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFN_6rGzsyAgGTGvN7GMSpLYxttaSsB1RDQg&usqp=CAU",
@@ -107,8 +110,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Pest Control</Text>
                 <Text style={styles.text2}>₹300/hr </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Harvesting")}
+              >
                 <Image
                   source={{
                     uri: "https://img.etimg.com/thumb/width-1200,height-1200,imgsize-190874,resizemode-75,msid-94770895/news/economy/agriculture/september-deluge-stalls-kharif-harvesting-damages-crops.jpg",
@@ -117,8 +123,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Harvesting</Text>
                 <Text style={styles.text2}>₹150/hr </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+                </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Harvesting")}
+              >
                 <Image
                   source={{
                     uri: "https://i.ytimg.com/vi/gzVy9NEaXlU/maxresdefault.jpg",
@@ -127,8 +136,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Cultivation</Text>
                 <Text style={styles.text2}>₹200/hr </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+                </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Harvesting")}
+              >
                 <Image
                   source={{
                     uri: "https://swarajya.gumlet.io/swarajya/2019-09/2a6288bc-d67a-4f30-ac30-4b845a953406/000_Del6339926.jpg",
@@ -137,7 +149,7 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Sowing</Text>
                 <Text style={styles.text2}>₹100/hr </Text>
-              </View>
+             </TouchableOpacity>
             </ScrollView>
           </View>
         </View>
@@ -213,7 +225,7 @@ const HomePage = () => {
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <Text style={styles.headText}>Rental</Text>
-            <Text style={styles.viewText}>View All</Text>
+            
           </View>
           <View>
             <ScrollView

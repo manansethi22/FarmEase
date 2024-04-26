@@ -6,6 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import AppNavigator from "./navigations/AppNavigator";
+import BuyProduct from "./screens/applyscreens/BuyProduct";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <StatusBar style="auto" />
          
           <AppNavigator/>
+          {/* <Buyroduct/> */}
          
           
         </SafeAreaView>

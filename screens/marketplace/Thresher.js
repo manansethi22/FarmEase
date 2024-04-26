@@ -74,11 +74,16 @@ const ThresherCard = ({ image, name, price }) => {
 const Threshers = ({ navigation }) => {
   const renderThresherItem = ({ item }) => (
     <Pressable
-      // onPress={() =>
-      //   navigation.navigate("ProductScreen", {
-      //     name: item.name,
-      //   })
-      // }
+    onPress={() => {
+      const data = {
+        id: item.id,
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        image: item.image.toString(), // Convert image URI to string
+      };
+      navigation.navigate("BuyProduct", { data });
+    }}
     >
       <ThresherCard image={item.image} name={item.name} price={item.price} />
     </Pressable>

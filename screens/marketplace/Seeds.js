@@ -128,11 +128,16 @@ const SeedCard = ({ image, name, price }) => {
   const Seeds = ({ navigation }) => {
     const renderSeedItem = ({ item }) => (
       <Pressable
-        // onPress={() =>
-        //   navigation.navigate("ProductScreen", {
-        //     name: item.name,
-        //   })
-        // }
+      onPress={() => {
+        const data = {
+          id: item.id,
+          name: item.name,
+          description: item.description,
+          price: item.price,
+          image: item.image.toString(), // Convert image URI to string
+        };
+        navigation.navigate("BuyProduct1", { data });
+      }}
       >
         <SeedCard
           image={item.image}
