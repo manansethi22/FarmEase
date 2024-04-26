@@ -7,6 +7,7 @@ import { FontAwesome } from "@expo/vector-icons";
 const PostJob = () => {
   return (
     <View style={styles.container}>
+     
       <AntDesign
         name="arrowleft"
         size={28}

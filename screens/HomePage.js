@@ -3,11 +3,15 @@ import SwiperFlatList from "react-native-swiper-flatlist";
 
 const { width } = Dimensions.get("window");
 
-import React from "react";
+import * as Location from "expo-location";
+import { useState, useEffect } from "react";
+
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from "@expo/vector-icons";
 
 const images = [
   require("../assets/farmer2.png"),
@@ -16,6 +20,22 @@ const images = [
 ];
 
 const HomePage = () => {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const navigation = useNavigation();
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
   return (
     <View style={styles.homecontainer}>
       <View style={styles.Appheader}>
@@ -38,6 +58,14 @@ const HomePage = () => {
         </View>
         <FontAwesome5 name="user-circle" size={30} color="black" />
       </View>
+      {location && (
+        <Text>
+          Latitude: {location.coords.latitude}, Longitude:{" "}
+          {location.coords.longitude}
+        </Text>
+      )}
+      {errorMsg && <Text>{errorMsg}</Text>}
+
       <ScrollView>
         <View style={{ height: 250 }}>
           <SwiperFlatList
@@ -60,7 +88,9 @@ const HomePage = () => {
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <Text style={styles.headText}>Featured Jobs</Text>
-            <Text style={styles.viewText}>View All</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Jobscreen")}>
+              <Text style={styles.viewText}>View All</Text>
+            </TouchableOpacity>
           </View>
           <View>
             <ScrollView
@@ -108,7 +138,6 @@ const HomePage = () => {
                 <Text style={styles.text1}>Sowing</Text>
                 <Text style={styles.text2}>₹100/hr </Text>
               </View>
-              
             </ScrollView>
           </View>
         </View>
@@ -124,7 +153,10 @@ const HomePage = () => {
               horizontal
               showsHorizontalScrollIndicator={false}
             >
-              <View style={styles.imageContainer1}>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Seeds")}
+              >
                 <Image
                   source={{
                     uri: "https://articles-1mg.gumlet.io/articles/wp-content/uploads/2016/12/seeds.jpg?compress=true&quality=80&w=640&dpr=2.6",
@@ -133,8 +165,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Seeds</Text>
                 <Text style={styles.text2}>Startiing from ₹150</Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Fertilizers")}
+              >
                 <Image
                   source={{
                     uri: "https://eos.com/wp-content/uploads/2023/11/components-of-different-types-of-fertilizers.jpg",
@@ -143,8 +178,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Fertilizers</Text>
                 <Text style={styles.text2}>Startiing from ₹500 </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Tools")}
+              >
                 <Image
                   source={{
                     uri: "https://cdn4.vectorstock.com/i/1000x1000/77/88/gardening-farming-equipment-ant-tools-vector-31307788.jpg",
@@ -152,9 +190,12 @@ const HomePage = () => {
                   style={styles.image2}
                 />
                 <Text style={styles.text1}>Tools</Text>
-                <Text style={styles.text2}>Startiing from ₹1000 </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+                <Text style={styles.text2}>Startiing from ₹100 </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Plants")}
+              >
                 <Image
                   source={{
                     uri: "https://ichef.bbci.co.uk/news/976/cpsprodpb/167A4/production/_131086029_gettyimages-1303980089.jpg",
@@ -163,7 +204,7 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Plants</Text>
                 <Text style={styles.text2}>Startiing from ₹60 </Text>
-              </View>
+              </TouchableOpacity>
             </ScrollView>
           </View>
         </View>
@@ -180,7 +221,10 @@ const HomePage = () => {
               horizontal
               showsHorizontalScrollIndicator={false}
             >
-              <View style={styles.imageContainer1}>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Tractor")}
+              >
                 <Image
                   source={{
                     uri: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-e-series-cab.jpg",
@@ -189,8 +233,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Tractor</Text>
                 <Text style={styles.text2}>₹1500/day </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Thresher")}
+              >
                 <Image
                   source={{
                     uri: "https://i.ytimg.com/vi/cphF0TEZjrM/maxresdefault.jpg",
@@ -199,8 +246,11 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Thresher</Text>
                 <Text style={styles.text2}>₹2000/day </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Drone")}
+              >
                 <Image
                   source={{
                     uri: "https://agrospectrumindia.com/wp-content/uploads/2023/11/Drones-indiamart.com_.webp",
@@ -209,17 +259,20 @@ const HomePage = () => {
                 />
                 <Text style={styles.text1}>Drone</Text>
                 <Text style={styles.text2}>₹3000/day </Text>
-              </View>
-              <View style={styles.imageContainer1}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.imageContainer1}
+                onPress={() => navigation.navigate("Cultivator")}
+              >
                 <Image
                   source={{
                     uri: "https://i.ytimg.com/vi/gzVy9NEaXlU/maxresdefault.jpg",
                   }}
                   style={styles.image1}
                 />
-                <Text style={styles.text1}>Cultivater</Text>
+                <Text style={styles.text1}>Cultivator</Text>
                 <Text style={styles.text2}>₹2000/day </Text>
-              </View>
+              </TouchableOpacity>
             </ScrollView>
           </View>
         </View>
@@ -293,6 +346,20 @@ const HomePage = () => {
 
         <View style={styles.lastComponent}></View>
       </ScrollView>
+      <TouchableOpacity
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 5,
+          padding: 16, // Adjust padding as needed
+        }}
+        onPress={() => navigation.navigate("WebView1")}
+      >
+        <Image
+          source={require("../assets/chatbot.png")}
+          style={{ width: 80, height: 80 }}
+        />
+      </TouchableOpacity>
     </View>
   );
 };

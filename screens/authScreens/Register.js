@@ -99,7 +99,7 @@ const Register = () => {
           <TextInput placeholder="City/Town" />
         </View>
       </View>
-      <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
+      <View style={{ flexDirection: "row", gap: 0, alignItems: "center" }}>
         <Checkbox
           status={checked ? "checked" : "unchecked"}
           onPress={() => {
@@ -108,7 +108,7 @@ const Register = () => {
           color={"#29C229"}
         />
         <Text style={styles.headText2}>
-          I agree with all the terms and conditions.
+          I agree with all the terms and conditions.   
         </Text>
         <FontAwesome name="info-circle" size={18} color="green" />
       </View>
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   headText2: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "400",
     color: "#668566",
   },

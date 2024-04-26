@@ -10,6 +10,7 @@ import Register from "./screens/authScreens/Register";
 import BottomNavBar from "./components/BottomNavBar";
 import AppNavigator from "./navigations/AppNavigator";
 
+
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -22,6 +23,7 @@ export default function App() {
           {/* <Register/> */}
           {/* <BottomNavBar/> */}
           <AppNavigator/>
+         
           
         </SafeAreaView>
       </PaperProvider>
