@@ -3,11 +3,23 @@ import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
 
-const PostJob = () => {
+
+const PostJob1 = () => {
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
      
+     <TouchableOpacity onPress={() => navigation.goBack()}>
+      <AntDesign
+        name="arrowleft"
+        size={28}
+        color="black"
+        style={{ marginTop: 20 }}
+      />
+      </TouchableOpacity>
+
       <Text style={styles.headText}>Create a Job</Text>
 
       
@@ -97,7 +109,7 @@ const PostJob = () => {
   );
 };
 
-export default PostJob;
+export default PostJob1;
 
 const styles = StyleSheet.create({
   container: {
@@ -109,7 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "600",
     alignSelf: "center",
-    marginTop: 60,
+    marginTop: 10,
     marginBottom: 20,
   },
   headText1: {

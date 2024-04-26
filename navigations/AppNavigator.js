@@ -16,6 +16,8 @@ import Tractors from '../screens/marketplace/Tractor';
 import Threshers from '../screens/marketplace/Thresher';
 import Cultivators from '../screens/marketplace/Cultivator';
 import Drones from '../screens/marketplace/Drone';
+import PostJobs from '../screens/PostJob';
+import PostJob1 from '../screens/PostJob1';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +44,9 @@ const AppNavigator = () => {
             <Stack.Screen name='Thresher' component={Threshers}/>
             <Stack.Screen name='Cultivator' component={Cultivators}/>
             <Stack.Screen name='Drone' component={Drones}/>
+            
+            <Stack.Screen name='Postjob1' component={PostJob1}/>
+            <Stack.Screen name='Postjob' component={PostJobs}/>
 
 
 

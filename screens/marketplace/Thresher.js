@@ -20,7 +20,7 @@ const threshersData = [
     description:
       "The Tractor Mounted Paddy Thresher is a specialized agricultural machine used for separating grains from harvested paddy crops. It is mounted on a tractor and can thresh large quantities of paddy efficiently.",
     price: "3500.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPcKWx1aq9BV-Rj05lVZ7loU3q00-ImcDf8g&s",
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ const threshersData = [
     description:
       "The Multicrop Thresher is a versatile machine capable of threshing various crops such as wheat, rice, maize, and pulses. It is suitable for small to medium-scale farmers and offers high efficiency.",
     price: "3000.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqb92JhYCqnfhSGvxjcz8vgGXnZ_qJr8-jhvGAeTPRg&s",
   },
   {
     id: "3",
@@ -36,7 +36,7 @@ const threshersData = [
     description:
       "The Soybean Thresher is specifically designed for threshing soybean crops and separating soybean pods from the plants. It ensures gentle handling of soybeans and minimal grain damage.",
     price: "2800.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ0mrCjaEkYrgKreSY_gmYssBirwY4AsPkQPa4Awx-Gw&s",
   },
   {
     id: "4",
@@ -44,7 +44,7 @@ const threshersData = [
     description:
       "The Mini Paddy Thresher is a compact and portable machine suitable for small-scale farmers and homestead use. It can thresh paddy crops efficiently and requires minimal maintenance.",
     price: "2500.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
+    image: "https://cpimg.tistatic.com/07361964/b/4/Mini-Paddy-Thresher.jpg",
   },
   {
     id: "5",
@@ -52,32 +52,9 @@ const threshersData = [
     description:
       "The Wheat Thresher is designed specifically for threshing wheat crops and separating wheat grains from the straw. It offers high throughput and precise grain separation.",
     price: "2700.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
+    image: "https://5.imimg.com/data5/AH/IL/RR/SELLER-36235407/wheat-thresher-machine.jpg",
   },
-  {
-    id: "6",
-    name: "Sunflower Thresher",
-    description:
-      "The Sunflower Thresher is engineered to thresh sunflower crops and extract seeds efficiently. It is equipped with special mechanisms to handle sunflower heads and minimize seed loss.",
-    price: "3200.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
-  },
-  {
-    id: "7",
-    name: "Maize Thresher",
-    description:
-      "The Maize Thresher is specifically designed for threshing maize (corn) crops and separating maize kernels from the cob. It offers high productivity and precise grain separation.",
-    price: "2900.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
-  },
-  {
-    id: "8",
-    name: "Pulse Thresher",
-    description:
-      "The Pulse Thresher is used for threshing various pulse crops such as lentils, chickpeas, and peas. It ensures efficient separation of grains from the pods while minimizing damage.",
-    price: "2600.00",
-    image: "https://dummyimage.com/200x200/000/fff&text=Thresher+Image",
-  },
+
 ];
 
 const ThresherCard = ({ image, name, price }) => {
@@ -97,11 +74,11 @@ const ThresherCard = ({ image, name, price }) => {
 const Threshers = ({ navigation }) => {
   const renderThresherItem = ({ item }) => (
     <Pressable
-      onPress={() =>
-        navigation.navigate("ProductScreen", {
-          name: item.name,
-        })
-      }
+      // onPress={() =>
+      //   navigation.navigate("ProductScreen", {
+      //     name: item.name,
+      //   })
+      // }
     >
       <ThresherCard image={item.image} name={item.name} price={item.price} />
     </Pressable>

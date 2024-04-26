@@ -5,43 +5,45 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const WIDTH = Dimensions.get("window").width;
 
+
 const cultivatorsData = [
     {
       id: '1',
       name: 'Power Tiller Cultivator',
       description: 'The Power Tiller Cultivator is a versatile machine used for primary and secondary tillage operations in various types of soil. It is equipped with multiple implements such as rotavator, plow, and harrow for efficient land preparation.',
       price: '3500',
-      image: 'https://dummyimage.com/200x200/000/fff&text=Cultivator+Image'
+      image: 'https://mlhobevaucyf.i.optimole.com/w:1200/h:742/q:mauto/ig:avif/f:best/https://novo3ds.in/wp-content/uploads/2023/06/AG0141_Power_cultivator_4.jpg'
     },
     {
       id: '2',
       name: 'Mini Tractor Cultivator',
       description: 'The Mini Tractor Cultivator is a compact and maneuverable machine suitable for small farms and orchards. It is designed for soil loosening, weed control, and seedbed preparation, offering versatility and ease of operation.',
       price: '2800',
-      image: 'https://dummyimage.com/200x200/000/fff&text=Cultivator+Image'
+      image: 'https://international.sonalika.com/wp-content/uploads/2020/09/6-15.jpg'
     },
     {
       id: '3',
       name: 'Heavy Duty Spring Loaded Cultivator',
       description: 'The Heavy Duty Spring Loaded Cultivator is designed for deep tillage and soil aeration in heavy or compacted soils. It features sturdy construction, adjustable tines, and spring-loaded assemblies for effective weed control and soil conditioning.',
       price: '4200',
-      image: 'https://dummyimage.com/200x200/000/fff&text=Cultivator+Image'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhs7rNLzHkEWxLymNMg2-x1vdncwzwUxkETUVQhWrr6Q&s'
     },
     {
       id: '4',
       name: 'Rotary Tiller Cultivator',
       description: 'The Rotary Tiller Cultivator is ideal for seedbed preparation, weed control, and mixing organic matter into the soil. It features rotating blades that break up soil clods and create a fine tilth, promoting better seed germination and root growth.',
       price: '3200',
-      image: 'https://dummyimage.com/200x200/000/fff&text=Cultivator+Image'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9HJkFmgOZd4jKPLiHyyMqPKf7nn6PDkspFgpfiCAt9g&s'
     },
     {
       id: '5',
       name: 'Mounted Offset Disc Harrow',
       description: 'The Mounted Offset Disc Harrow is used for breaking up soil clods, incorporating crop residues, and leveling the field surface. It is suitable for both primary and secondary tillage operations and offers efficient soil preparation for planting.',
       price: '3800',
-      image: 'https://dummyimage.com/200x200/000/fff&text=Cultivator+Image'
+      image: 'https://5.imimg.com/data5/SELLER/Default/2023/9/348123058/CG/BY/UR/127621971/fbmodh-24-mounted-offset-disc-harrow.jpg'
     },
   ];
+
   
 
 const CultivatorCard = ({ image, name, price }) => {
@@ -57,11 +59,11 @@ const CultivatorCard = ({ image, name, price }) => {
 const Cultivators = ({ navigation }) => {
   const renderCultivatorItem = ({ item }) => (
     <Pressable
-      onPress={() =>
-        navigation.navigate("ProductScreen", {
-          name: item.name,
-        })
-      }
+      // onPress={() =>
+      //   navigation.navigate("ProductScreen", {
+      //     name: item.name,
+      //   })
+      // }
     >
       <CultivatorCard
         image={item.image}

@@ -13,7 +13,7 @@
       price: "200.00 / 1 kg",
       description:
         "Organic Manure is a natural fertilizer made from plant or animal sources. It enriches the soil with essential nutrients and improves soil structure.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTugCKjEsHIQcnI0aoOQWLksIh2ZCengEatWg&s",
     },
     {
       id: "2",
@@ -21,7 +21,7 @@
       price: "150.00 / 1 kg",
       description:
         "NPK Fertilizer is a chemical fertilizer containing the primary nutrients nitrogen (N), phosphorus (P), and potassium (K). It promotes plant growth and improves crop yield.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRlPGr72qdLDu-I9C4M5LBOHAdqqBCzcni5A&s",
     },
     {
       id: "3",
@@ -29,7 +29,7 @@
       price: "100.00 / 1 kg",
       description:
         "Compost is a nutrient-rich organic matter that improves soil fertility and helps retain moisture. It is made from decomposed organic waste.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv7Szr9MRmwfDC8_zLDCpFu6HrnSqQCwE3Gg&s",
     },
     {
       id: "4",
@@ -37,7 +37,7 @@
       price: "250.00 / 1 kg",
       description:
         "Vermicompost is a nutrient-rich organic fertilizer produced by composting organic matter using earthworms. It enhances soil health and promotes plant growth.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7iLNt86vLtfGtp0dzfa26LQUN9-MuCoHMOQ&s",
     },
     {
       id: "5",
@@ -45,7 +45,7 @@
       price: "180.00 / 1 kg",
       description:
         "Bone Meal is a natural fertilizer made from ground animal bones. It is rich in phosphorus and helps improve root development and flowering in plants.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYoohGhehQD5_1WoDIIWjfU3oXqLp0n4XqPQ&s",
     },
     {
       id: "6",
@@ -53,7 +53,7 @@
       price: "220.00 / 1 kg",
       description:
         "Fish Emulsion is a liquid fertilizer made from fermented fish. It is rich in nutrients like nitrogen, phosphorus, and potassium, and provides quick nutrition to plants.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Fog_8_D0Yzd0kFX8yDoy3cpoNKS2WHQD7Q&s",
     },
     {
       id: "7",
@@ -61,7 +61,7 @@
       price: "120.00 / 1 kg",
       description:
         "Neem Cake is a byproduct obtained during the extraction of neem oil. It acts as an organic fertilizer and pest repellent, promoting healthy plant growth.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdIzVhOqXTpZi_xr6-iPhFQhvFFpN2Z0yabA&s",
     },
     {
       id: "8",
@@ -69,9 +69,10 @@
       price: "90.00 / 1 kg",
       description:
         "Gypsum is a natural mineral used as a soil conditioner and fertilizer. It improves soil structure, drainage, and nutrient uptake by plants.",
-      image: "https://dummyimage.com/200x200/000/fff&text=Fertilizer+Image",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8s4FbuZBI6yd3bXwqd_VBae1-Vn4vme_hgA&s",
     },
   ];
+
   
   
   const FertilizerCard = ({ image, name, price }) => {
@@ -87,11 +88,11 @@
   const Fertilizers = ({ navigation }) => {
     const renderFertilizerItem = ({ item }) => (
       <Pressable
-        onPress={() =>
-          navigation.navigate("ProductScreen", {
-            name: item.name,
-          })
-        }
+        // onPress={() =>
+        //   navigation.navigate("ProductScreen", {
+        //     name: item.name,
+        //   })
+        // }
       >
         <FertilizerCard
           image={item.image}

@@ -58,13 +58,13 @@ const HomePage = () => {
         </View>
         <FontAwesome5 name="user-circle" size={30} color="black" />
       </View>
-      {location && (
+      {/* {location && (
         <Text>
           Latitude: {location.coords.latitude}, Longitude:{" "}
           {location.coords.longitude}
         </Text>
       )}
-      {errorMsg && <Text>{errorMsg}</Text>}
+      {errorMsg && <Text>{errorMsg}</Text>} */}
 
       <ScrollView>
         <View style={{ height: 250 }}>
@@ -231,7 +231,7 @@ const HomePage = () => {
                   }}
                   style={styles.image1}
                 />
-                <Text style={styles.text1}>Tractor</Text>
+                <Text style={styles.text1}>Vehicles</Text>
                 <Text style={styles.text2}>₹1500/day </Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -296,7 +296,11 @@ const HomePage = () => {
             style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <View>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Jobscreen")}
+              >
               <Text style={styles.text1}>Post a Job</Text>
+              </TouchableOpacity>
               <Text style={styles.text2}>Looking for seasonal workers?</Text>
               <Text style={styles.text2}>Post your job and onnect with</Text>
               <Text style={styles.text2}>Local laborers.</Text>
@@ -311,6 +315,7 @@ const HomePage = () => {
                 borderRadius: 15,
                 marginTop: 30,
               }}
+              onPress={() => navigation.navigate("Postjob1")}
             >
               <Text style={styles.text3}>Post Job</Text>
             </TouchableOpacity>
